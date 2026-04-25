@@ -27,7 +27,7 @@ app.post('/api/products', (req, res) => {
 
     const newProduct = { id: Date.now(), name, price };
     products.push(newProduct);
-    res.status(201).json({ message: 'Product created successfully' });
+    res.status(201).json(newProduct);
 }catch (error) {
     console.error('Error adding product:', error);
     res.status(500).json({ message: 'Internal server error' });
